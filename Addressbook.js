@@ -144,20 +144,33 @@ function editContact(firstName, lastName, property, newValue) {
         console.log("Contact Does Not Exist");
     }
 }
+
+function deleteContact(firstName, lastName) {
+    if (contactExists(firstName, lastName)) {
+        addressBookArray = addressBookArray.filter((contact) => contact.firstName != firstName && contact.lastName != lastName);
+        console.log(firstName + " " + lastName + "  Contact Deleted");
+    } else {
+        console.log("Contact Does Not Exist");
+    }
+}
+
 try {
-    addressBookArray.push(new Contact("Nayana", "Ksss", "India", "Davangere", "Karnataka", 577044, "91 6666543210", "nayana@gmail.com"));
+    addressBookArray.push(new Contact("Nayana", "Ksss", "Vidyanagar", "Davangere", "Karnataka", 577004, "91 7876543210", "nayana@gmail.com"));
 } catch (e) {
     console.error(e);
 }
 
 try {
-    addressBookArray.push(new Contact("Priya", "Kolur","Leninnagar", "Davangere", 'Karnataka', 577004, '91 7774563210', "priya@gmail.com"));
+    addressBookArray.push(new Contact("Priyanka", "kolur","lenin", "Davangere", 'Karnataka', 577004, '91 7974563540', "priya@gmail.com"));
 } catch (e) {
     console.log(e);
 }
 console.log(addressBookArray);
 console.log("\nAfter Editing Contact")
 editContact("Nayana", "Ksss", "city", "Davangere");
-editContact("Nayana", "Ksss", "state", "Karanatka");
-editContact("Nayana", "ksss", "address", "India");
+editContact("Nayana", "Ksss", "state", "Karanataka");
+editContact("Nayana", "Ksss", "address", "Vidyanagar");
+console.log(addressBookArray);
+
+deleteContact("Nayana", "Ksss");
 console.log(addressBookArray);
