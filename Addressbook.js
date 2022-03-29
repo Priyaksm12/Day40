@@ -165,7 +165,7 @@ function countContacts(contactArray){
     }
     else{
         try{
-            addressBookArray.push(new Contact(firstName,lastName,'leninnagar','Davangere','Karnataka',577004,'91 7561036987','kavyag@gmail.com'));
+            addressBookArray.push(new Contact(firstName,lastName,'leninnagar','Davangere','Karnataka',577004,'91 7891036987','kavya@gmail.com'));
             
             console.log("Contact is added. ");
         }catch(Exception){
@@ -174,20 +174,30 @@ function countContacts(contactArray){
         
     }
 }
+function searchByCityOrState(contactArray,cityorstate){
+    if(cityorstate == "Bangalore"){
+        console.log("Contact by city");
+        contactArray.filter(name => name.city == cityorstate).forEach(contact=>console.log(contact.toString()));
+    }
+    if(cityorstate == "Karnataka"){
+        console.log("Contacts by state");
+        contactArray.filter(name => name.state == cityorstate).forEach(contact=>console.log(contact.toString()));
+    }
+}
 try {
-    addressBookArray.push(new Contact("Nayana", "Ksss", "vidyanagar", "Davangere", "Karnataka", 577004, "91 8765543210", "nayana@gmail.com"));
+    addressBookArray.push(new Contact("Nayana", "Ksss", "Vidyanagar", "Davangere", "Karnataka", 577004, "91 7776543210", "nayana@gmail.com"));
 } catch (e) {
     console.error(e);
 }
 
 try {
-    addressBookArray.push(new Contact("Priya", "kolur","Leninnagar", "Davangere", 'Karnataka', 577004, '91 6874563210', "priya@gmail.com"));
+    addressBookArray.push(new Contact("Priya", "kolur","leninnagar", "Davangere", 'Karnataka', 577004, '91 8972563210', "priya@gmail.com"));
 } catch (e) {
     console.log(e);
 }
 console.log(addressBookArray);
 console.log("\nAfter Editing Contact")
-editContact("Nayana", "Ksss", "city", "Davangere");
+editContact("Nayana", "Ksss", "city", "Davamgere");
 editContact("Nayana", "Ksss", "state", "Karanataka");
 editContact("Nayana", "Ksss", "address", "vidyanagar");
 console.log(addressBookArray);
@@ -195,5 +205,7 @@ console.log(addressBookArray);
 deleteContact("Nayana", "Ksss");
 console.log(addressBookArray);
 countContacts(addressBookArray);
-addContact(addressBookArray,"kavya", "Manjunath");
+addContact(addressBookArray,"Kavya", "Manjunath");
 console.log(addressBookArray);
+searchByCityOrState(addressBookArray,'Davangere');
+searchByCityOrState(addressBookArray,'Karnataka');
