@@ -72,5 +72,5 @@ class Contact {
     }
 }
 
-let contact = new Contact("Priya", "Atif", "Bangalore", "Karnataka", 560039, 9874563210, "abc@gmail.com");
+let contact = new Contact("Priya", "kolur", "Bangalore", "Karnataka", 570044, 7874563210, "priya@gmail.com");
 console.log(contact.toString());
