@@ -154,23 +154,29 @@ function deleteContact(firstName, lastName) {
     }
 }
 
+function countContacts(contactArray){
+    let count= contactArray.reduce((a, b) => a.concat(b), []).length;
+    console.log("Number of contacts is: "+count);
+ }
+
 try {
-    addressBookArray.push(new Contact("Nayana", "Ksss", "Vidyanagar", "Davangere", "Karnataka", 577004, "91 7876543210", "nayana@gmail.com"));
+    addressBookArray.push(new Contact("Sanjana", "Mjjjj", "Leninnagar", "Davangere", "Karnataka", 577004, "91 7776543310", "sanju@gmail.com"));
 } catch (e) {
     console.error(e);
 }
 
 try {
-    addressBookArray.push(new Contact("Priyanka", "kolur","lenin", "Davangere", 'Karnataka', 577004, '91 7974563540', "priya@gmail.com"));
+    addressBookArray.push(new Contact("Priya", "Kolur","Leninnagar", "Davangere", 'Karnataka', 577004, '91 77874563210', "priya@gmail.com"));
 } catch (e) {
     console.log(e);
 }
 console.log(addressBookArray);
 console.log("\nAfter Editing Contact")
-editContact("Nayana", "Ksss", "city", "Davangere");
-editContact("Nayana", "Ksss", "state", "Karanataka");
-editContact("Nayana", "Ksss", "address", "Vidyanagar");
+editContact("Sanjana", "Mjjjj", "city", "Davangere");
+editContact("Sanjana", "Mjjjj", "state", "Karanataka");
+editContact("Sanjana", "Mjjjj", "address", "leninnagar");
 console.log(addressBookArray);
 
-deleteContact("Nayana", "Ksss");
+deleteContact("Sanjana", "Mjjjj");
 console.log(addressBookArray);
+countContacts(addressBookArray);
